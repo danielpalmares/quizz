@@ -1,10 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-* {
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
 
 body {
+  box-sizing: border-box;
+
   background: linear-gradient(to right, #757f9a, #d7dde8);
   min-height: 100vh;
   display: flex;
@@ -63,14 +72,16 @@ input[type="radio"]:checked + label {
   margin-top: 20px;
   outline: none;
   border: 1px solid;
-  width: 450px;
+  width: 100%;
+
+  transition: transform 0.2s;
 }
 
 .next-btn:hover {
   cursor: pointer;
   box-shadow: 5px 5px 10px 0 #757f9a;
   transform: scale(1.02);
-  transform: transform 1000ms;
+  /* transform: transform 1000ms; suponho que queira um transition, mas isso tem que ser no pai*/
   border-color: #757f9a;
 }
 
@@ -85,16 +96,22 @@ input[type="radio"]:checked + label {
 }
 
 @media screen and (max-width: 800px) {
-  section,
+  section {
+    width: 90%;
+  }
+
   .next-btn {
-    width: 400px;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  section,
+  section {
+    width: 90%;
+  }
+
   .next-btn {
-    width: 200px;
+    width: 100%;
   }
 }
 
