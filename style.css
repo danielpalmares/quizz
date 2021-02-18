@@ -1,49 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@700&display=swap');
-* {
-    text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@700&display=swap");
+
+/* reset nos estilos originais do html */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 body {
-    background: linear-gradient(to left, #757F9A, #D7DDE8);
-    /* font-family: 'Nova Square', cursive; */
-    font-family: 'Oxanium', cursive;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100wh;
+  box-sizing: border-box; /* sempre faça isso junto com os seletores acima, alguns elementos já vem com margin, padding aplicado e atrapalha muito */
+  background: linear-gradient(to left, #757f9a, #d7dde8);
+  background-repeat: no-repeat;
+  color: white; /* você usa branco no h1 e h2, colocando aqui todos herdam */
+  /* font-family: 'Nova Square', cursive; */
+  font-family: "Oxanium", cursive;
+  height: 100vh;
+  width: 100vw;
+  position: relative; /* para a .container */
 }
 
 h1 {
-    font-size: 54px;
-    color: white;
+  font-size: 54px;
 }
 
-h2 {
-    font-size: 30px;
-}
+/* h2 {
+  font-size: 30px;
+} */
 
 .container {
-    position: absolute;
-    z-index: 99999999;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  /* sempre procure dar largura e altura, percentage/ vh/vw é bom mas o pai deles precisam ter uma largura para os filhos se referenciarem */
+  max-width: 400px;
+  max-height: 200px;
+  position: absolute; /* o elemento pai precisa ser position: relative para ser aplicado */
+  /* z-index: 99999999; desnecessário, não precisa sobrepor outro elemento */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .flex-column {
-    display: flex;
-    flex-direction: column;
-}
+  /* mesma altura e largura do pai, por isso a importância de definir altura e largura :) */
+  width: 100%;
+  height: 100%;
 
-.flex-center {
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btn {
-    padding: 15px;
-    /* background: linear-gradient(to left, #757F9A, #D7DDE8); */
-    background-color: #757F9A;
-    border-radius: 4.8px;
-    text-decoration: none;
-    color: white;
+  font-size: 30px; /* tirei do h2 pois é desnecessário ele */
+  /* background: linear-gradient(to left, #757F9A, #D7DDE8); */
+  background-color: #757f9a;
+  padding: 15px;
+  border-radius: 4.8px;
+  text-decoration: none;
+  color: white;
 }
